@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="navbar-toolbar">
+  <span class="brand">ode to code ode</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+    Account
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/login">Login</button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Settings</button>
+  </mat-menu>
+</mat-toolbar>
