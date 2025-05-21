@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login.component';
-import { HeroComponent } from './components/hero/hero.component';
+import { LoginComponent } from './features/auth/login/login.component';
+import { HomeComponent } from './features/home/home.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: HeroComponent }, // Default route
+  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent }, // Default route
 ];
 
 @NgModule({
