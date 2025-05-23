@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.game-container {
+  font-family: 'Orbitron', monospace;
+  background: linear-gradient(135deg, #0a192f, #1f2937);
+  color: #00f0ff;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 12px #00f0ffaa;
+  user-select: none;
+}
+
+.domino-area {
+  position: relative;
+  width: 300px;
+  height: 320px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #004d40, #00251a);
+  box-shadow: 0 0 30px #00f0ff99 inset;
+  padding: 20px;
+}
+
+.domino {
+  position: absolute;
+  width: 80px;
+  height: 140px;
+  background: linear-gradient(135deg, #00838f, #004d40);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px #00f0ff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #00f0ff;
+  cursor: default;
+  transition: transform 1s ease, opacity 1s ease;
+  transform-origin: bottom left;
+  user-select: none;
+
+  &.fallen {
+    transform: rotate(90deg) translateX(90px);
+    opacity: 0.4;
+    box-shadow: none;
+  }
+
+  .domino-back {
+    font-size: 3rem;
+  }
+}
+
+.puzzle-card {
+  background: #004d40;
+  color: #00f0ff;
+  box-shadow: 0 0 12px #00f0ffcc;
+  border-radius: 12px;
+  user-select: none;
+
+  .question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #00f0ffaa;
+  }
+
+  .answer-input {
+    width: 100%;
+  }
+
+  button {
+    margin-top: 0.5rem;
+  }
+}
+
+.feedback {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  min-height: 1.5rem;
+  user-select: none;
+  text-shadow: 0 0 6px #00f0ffaa;
+}
+
+.game-complete {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #00ffbb;
+  text-shadow: 0 0 12px #00ffbbcc;
+  user-select: none;
+}

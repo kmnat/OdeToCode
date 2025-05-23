@@ -1,1 +1,33 @@
-<p>game-domino works!</p>
+<div class="game-container">
+  <h1 class="title">🎲 Domino Puzzle Challenge</h1>
+
+  <div class="domino-area">
+    <div
+      class="domino"
+      *ngFor="let d of dominos; let i = index"
+      [class.fallen]="d.fallen"
+      [ngStyle]="{ top: d.position.top, left: d.position.left }"
+    >
+      <ng-container *ngIf="i === 0">
+        <mat-card class="puzzle-card" appearance="outlined">
+          <mat-card-content>
+            <p class="question">{{ puzzleSets[currentSetIndex].puzzle.question }}</p>
+            <mat-form-field appearance="fill" class="answer-input">
+              <input matInput placeholder="Your answer" [(ngModel)]="userAnswer" />
+            </mat-form-field>
+            <button mat-raised-button color="accent" (click)="checkAnswer()">Submit ✔️</button>
+          </mat-card-content>
+          <p class="feedback">{{ feedback }}</p>
+        </mat-card>
+      </ng-container>
+
+      <ng-container *ngIf="i !== 0">
+        <div class="domino-back">🁢</div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div *ngIf="currentSetIndex >= puzzleSets.length" class="game-complete">
+    <h2>🎉 All dominos fallen! You solved all puzzles!</h2>
+  </div>
+</div>
